@@ -1,0 +1,9 @@
+{
+  "key.categories.speed_change": "Speed Change",
+  "key.speed_change.toggle_speed": "Cycle Speed Boost",
+  "message.speed_change.level": "Speed: +%s%%",
+  "hud.speed_change.level": "Speed: +%s%%",
+  "speed_change.configuration.title": "Speed Change Config",
+  "speed_change.configuration.section.speed_change.common.toml": "Speed Change",
+  "speed_change.configuration.section.speed_change.common.toml.title": "Speed Change"
+}
