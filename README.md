@@ -24,9 +24,10 @@
 
 按键切换顺序如下：
 
-```text
 原速 → 2倍 → 3倍 → 4倍 → 5倍 → 原速
-  
+
+
+# Other
 Installation information
 =======
 
