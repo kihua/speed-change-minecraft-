@@ -46,7 +46,23 @@ displayName="${mod_name}" #mandatory
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Example mod description.
+A Minecraft mod that lets you cycle through multiple movement speed levels by pressing a key (default: V). Each level adds configurable speed boost. Perfect for creative mode building, server administration, or just getting around faster.
+
+Features:
+- Cycle through up to 20 speed levels (configurable)
+- Configurable speed increment per level
+- Client-server synced
+- HUD display showing current speed bonus
+- Mod Menu / NeoForge config screen support
+
+一个 Minecraft 模组，允许你通过按键（默认 V 键）切换多个移动速度等级。每级增加可配置的速度加成。适用于创造模式建筑、服务器管理或快速移动。
+
+功能：
+- 最多 20 级速度等级（可配置）
+- 每级速度增量可自定义
+- 客户端-服务器同步
+- HUD 显示当前速度加成
+- 支持模组菜单 / NeoForge 配置界面
 '''
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.

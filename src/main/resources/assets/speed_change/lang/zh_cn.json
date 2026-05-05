@@ -1,0 +1,9 @@
+{
+  "key.categories.speed_change": "速度切换",
+  "key.speed_change.toggle_speed": "切换速度等级",
+  "message.speed_change.level": "速度: +%s%%",
+  "hud.speed_change.level": "速度: +%s%%",
+  "speed_change.configuration.title": "速度切换配置",
+  "speed_change.configuration.section.speed_change.common.toml": "速度切换",
+  "speed_change.configuration.section.speed_change.common.toml.title": "速度切换"
+}

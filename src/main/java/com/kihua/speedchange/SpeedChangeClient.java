@@ -31,7 +31,6 @@ public class SpeedChangeClient {
             "key.categories.speed_change"
     );
     private static int speedLevel;
-    private static final int MAX_LEVEL = 4;
 
     public SpeedChangeClient(ModContainer container) {
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
@@ -57,7 +56,7 @@ public class SpeedChangeClient {
 
         while (TOGGLE_SPEED.consumeClick()) {
             speedLevel++;
-            if (speedLevel > MAX_LEVEL) {
+            if (speedLevel > Config.MAX_LEVEL.get()) {
                 speedLevel = 0;
             }
             PacketDistributor.sendToServer(new ToggleSpeedPayload());
@@ -72,7 +71,7 @@ public class SpeedChangeClient {
         }
 
         GuiGraphics guiGraphics = event.getGuiGraphics();
-        int bonus = speedLevel * 100;
+        int bonus = (int) Math.round(speedLevel * Config.SPEED_INCREMENT.get() * 100);
         Component text = Component.translatable("hud.speed_change.level", bonus);
         int textWidth = minecraft.font.width(text);
         int x = guiGraphics.guiWidth() - textWidth - 8;

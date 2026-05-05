@@ -9,9 +9,16 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 
 public final class SpeedManager {
     private static final ResourceLocation SPEED_MODIFIER_ID = ResourceLocation.fromNamespaceAndPath(SpeedChange.MODID, "toggle_speed");
-    private static final int MAX_LEVEL = 4;
 
     private SpeedManager() {
+    }
+
+    private static int getMaxLevel() {
+        return Config.MAX_LEVEL.get();
+    }
+
+    private static double getSpeedIncrement() {
+        return Config.SPEED_INCREMENT.get();
     }
 
     public static int getLevel(ServerPlayer player) {
@@ -20,12 +27,12 @@ public final class SpeedManager {
 
     public static int cycle(ServerPlayer player) {
         int level = getLevel(player) + 1;
-        if (level > MAX_LEVEL) {
+        if (level > getMaxLevel()) {
             level = 0;
         }
         player.setData(SpeedAttachments.SPEED_LEVEL, level);
         reconcile(player);
-        int bonus = level * 100;
+        int bonus = (int) Math.round(level * getSpeedIncrement() * 100);
         player.displayClientMessage(Component.translatable("message.speed_change.level", bonus), true);
         return level;
     }
@@ -40,7 +47,7 @@ public final class SpeedManager {
 
         int level = getLevel(player);
         if (level > 0) {
-            double value = level * 0.1;
+            double value = level * getSpeedIncrement();
             movementSpeed.addOrUpdateTransientModifier(new AttributeModifier(SPEED_MODIFIER_ID, value, AttributeModifier.Operation.ADD_VALUE));
         }
     }
